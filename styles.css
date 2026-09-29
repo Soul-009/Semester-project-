@@ -1,0 +1,13 @@
+body {
+  max-width: 40rem;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+header,
+main,
+footer {
+  margin-bottom: 2rem;
+}
