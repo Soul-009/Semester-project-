@@ -2,14 +2,72 @@ body {
   max-width: 40rem;
   margin: 4rem auto;
   padding: 1rem;
-  background-color: #b0b0b0;
+  background: linear-gradient(to bottom, #e4e4e4 0%, #858585 100%);
   border: 4px solid #a08000;
   font-family: sans-serif;
   line-height: 1.6;
+}
+
+.home-page {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 8rem);
+}
+
+.home-page main {
+  flex: 1;
+}
+
+.home-page .start-link {
+  margin-top: 1rem;
+}
+
+.home-page footer {
+  margin-bottom: 0;
+}
+
+.home-page footer p {
+  margin: 0;
+  font-size: 8pt;
 }
 
 header,
 main,
 footer {
   margin-bottom: 2rem;
+}
+
+.start-link {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border: 3px solid #a08000;
+  color: #1f1f1f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.start-link:hover,
+.start-link:focus-visible {
+  background-color: #a08000;
+}
+
+.character-select {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 20rem;
+}
+
+.character-select select {
+  padding: 0.5rem;
+  font: inherit;
+}
+
+.character-box {
+  min-height: 4rem;
+  display: grid;
+  place-items: center;
+  border: 4px solid #a08000;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
