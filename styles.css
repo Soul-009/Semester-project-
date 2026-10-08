@@ -3,20 +3,79 @@ body {
   margin: 4rem auto;
   padding: 1rem;
   background: linear-gradient(to bottom, #e4e4e4 0%, #858585 100%);
-  border: 4px solid #a08000;
-  font-family: sans-serif;
+  border: 4px solid #f3c623;
+  font-family: "Trebuchet MS", sans-serif;
   line-height: 1.6;
+}
+
+html.character-select-page {
+  min-height: 100%;
+  background: linear-gradient(to bottom, #e4e4e4 0%, #858585 100%);
+}
+
+.character-select-page body > header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 5rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.select-page-logo {
+  width: 5rem;
+  aspect-ratio: 1;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.character-select-page body > header h1 {
+  margin: 0;
 }
 
 .home-page {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 8rem);
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1.5rem;
+  border: 0;
+  background: #414646;
 }
 
-.home-page main {
-  flex: 1;
+.home-frame {
+  box-sizing: border-box;
+  width: min(100%, 40rem);
+  margin: auto;
+  padding: 1.25rem 1.5rem;
+  border: 4px solid #f3c623;
+  background: linear-gradient(to bottom, #e4e4e4 0%, #858585 100%);
+}
+
+.home-frame header {
+  margin-bottom: 0.25rem;
+}
+
+.home-frame header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.home-frame main {
+  margin-bottom: 0;
+}
+
+.home-frame main > p:first-child {
+  margin-top: 0.25rem;
+}
+
+.home-art {
+  display: block;
+  width: min(100%, 16rem);
+  aspect-ratio: 2 / 3;
+  margin: 0.75rem auto;
+  border: 3px solid #f3c623;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .home-page .start-link {
@@ -24,7 +83,9 @@ body {
 }
 
 .home-page footer {
+  margin-top: auto;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .home-page footer p {
@@ -41,15 +102,23 @@ footer {
 .start-link {
   display: inline-block;
   padding: 0.6rem 1.5rem;
-  border: 3px solid #a08000;
+  border: 3px solid #f3c623;
   color: #1f1f1f;
   font-weight: bold;
   text-decoration: none;
 }
 
+.hero-guide-link,
+.hero-guide-link:visited,
+.back-link,
+.back-link:visited {
+  color: #1f1f1f;
+  text-decoration-color: #1f1f1f;
+}
+
 .start-link:hover,
 .start-link:focus-visible {
-  background-color: #a08000;
+  background-color: #f3c623;
 }
 
 .character-select {
@@ -58,16 +127,178 @@ footer {
   max-width: 20rem;
 }
 
+.character-select-page h1,
+.character-select-page .character-select > span {
+  text-decoration: underline;
+}
+
 .character-select select {
   padding: 0.5rem;
   font: inherit;
+  background-color: #b5b5b5;
+  color: #1f1f1f;
+}
+
+.character-select select option {
+  background-color: #b5b5b5;
+  color: #1f1f1f;
 }
 
 .character-box {
   min-height: 4rem;
   display: grid;
   place-items: center;
-  border: 4px solid #a08000;
+  border: 4px solid #f3c623;
   font-size: 1.25rem;
   font-weight: bold;
+}
+
+.hero-guide {
+  --ink: #202321;
+  --olive: #f3c623;
+  box-sizing: border-box;
+  max-width: 68rem;
+  margin: 2rem auto;
+  padding: 2rem clamp(1rem, 4vw, 3.5rem);
+  border: 0;
+  background: linear-gradient(to bottom, #e4e4e4 0%, #858585 100%);
+  color: var(--ink);
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.hero-guide .guide-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.guide-back,
+.guide-footer a {
+  color: var(--ink);
+  font-weight: bold;
+}
+
+.guide-kicker,
+.hero-role {
+  color: #53604a;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.guide-header h1 {
+  margin: 0.4rem 0;
+  font-size: 3.5rem;
+}
+
+.guide-intro {
+  max-width: 38rem;
+}
+
+.hero-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  padding: 1rem 0;
+}
+
+.hero-nav a {
+  color: var(--ink);
+  font-weight: bold;
+}
+
+.hero-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 30%);
+  gap: 2rem;
+  align-items: center;
+  min-height: 20rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #888888;
+  scroll-margin-top: 1rem;
+}
+
+.hero-copy h2 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.hero-copy .hero-real-name {
+  margin: 0.15rem 0 1rem;
+  color: #53604a;
+  font-weight: bold;
+}
+
+.hero-copy h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.hero-copy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-top: 0;
+  padding-left: 1.2rem;
+}
+
+.hero-art {
+  width: 100%;
+  height: 18rem;
+  object-fit: contain;
+  object-position: center;
+}
+
+.unavailable-art {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.8rem;
+  border: 1px dashed #78816e;
+  background: linear-gradient(145deg, #e7e7d9, #d3ddca);
+  text-align: center;
+}
+
+.art-mark {
+  color: #566349;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.art-caption {
+  color: #53604a;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.hero-guide .guide-footer {
+  margin: 2rem 0 0;
+}
+
+@media (max-width: 38rem) {
+  .hero-guide {
+    margin: 0;
+    padding: 1.25rem;
+  }
+
+  .guide-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-profile {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .hero-art {
+    grid-row: 1;
+    height: 14rem;
+  }
+
+  .character-select-page body > header {
+    grid-template-columns: minmax(0, 1fr) 4rem;
+  }
+
+  .select-page-logo {
+    width: 4rem;
+  }
 }
